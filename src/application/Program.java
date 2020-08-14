@@ -16,19 +16,30 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		BusinessAccount account = new BusinessAccount(8010, "Bob Brown", 0.0, 500.00);
+		System.out.println("Enter account data: ");
+		System.out.print("Number: ");
+		Integer number = sc.nextInt();
+		System.out.print("Holder: ");
+		String holder = sc.nextLine();
+		sc.nextLine();
+		System.out.print("Balance: ");
+		Double balance = sc.nextDouble();
+
+		BusinessAccount account = new BusinessAccount(number, holder, balance, 0.0);
 		
-		account.deposit(100.00);
-		
+		System.out.println();
 		System.out.println("Number: " + account.getNumber());
 		System.out.println("Holder: " + account.getHolder());
 		System.out.println("Balance: " + account.getBalance());
 		System.out.println("Loan Limit: " + account.getLoanLimit());
 		
-		account.withdraw(50.00);
-		
 		System.out.println();
-		System.out.println("New banlance: " + account.getBalance());
+		System.out.println("Enter loan: ");
+		Double loan = sc.nextDouble();
+		
+		account.loan(loan);
+		
+		System.out.println("New Balance: " + account.getBalance());
 		
 		sc.close();
 		

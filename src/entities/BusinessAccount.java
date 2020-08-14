@@ -30,7 +30,7 @@ public class BusinessAccount extends Account {
 	public void loan(double amount) {
 		//disponibilizar o emprestimo se o limite for maior ou igual ao solicitado
 		if (loanLimit >= amount) {
-			deposit(amount);
+			balance += amount - 10.0;
 		}
 	}
 
