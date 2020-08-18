@@ -13,7 +13,6 @@ public class Account {
 	
 	//metodo com argumentos
 	public Account(Integer number, String holder, Double balance) {
-		super();
 		this.number = number;
 		this.holder = holder;
 		this.balance = balance;
@@ -49,5 +48,7 @@ public class Account {
 	public void deposit(double amount) {
 		balance += amount;
 	}
+	
+	
 
 }

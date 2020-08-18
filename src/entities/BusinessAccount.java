@@ -1,6 +1,7 @@
 package entities;
 
-public class BusinessAccount extends Account {
+//palavra "final" bloqueia o uso desta classe como superclasse
+public final class BusinessAccount extends Account {
 	
 	private Double loanLimit;
 	
@@ -11,7 +12,7 @@ public class BusinessAccount extends Account {
 		super();
 	}
 
-	//metodo com argumentos
+	//metodo com argumentos (com argumentos da superclasse)
 	public BusinessAccount(Integer number, String holder, Double balance, Double loanLimit) {
 		super(number, holder, balance);
 		this.loanLimit = loanLimit;
@@ -32,6 +33,13 @@ public class BusinessAccount extends Account {
 		if (loanLimit >= amount) {
 			balance += amount - 10.0;
 		}
+	}
+	
+	//metodo para saque (utilizando funcionalidades da superclasse - sobreposição)
+	@Override
+	public void withdraw(double amount) {
+		super.withdraw(amount);
+		balance -= 2.0;
 	}
 
 }
