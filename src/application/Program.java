@@ -79,8 +79,16 @@ public class Program {
 		acc3.updateBalance(); //aplica juros sobre o saldo
 		System.out.println("New Balance: " + acc3.getBalance());
 		
-		sc.close();
+		System.out.println("--------------------------------------");
 		
+		//exemplo de polimorfismo (varivel de um tipo sendo instanciada com outro tipo)
+		Account acc4 = new Account(126, "Bruno", 3000.00);
+		acc4.withdraw(2000.00);
+		System.out.println("New Balance simple account: " + acc4.getBalance());
+		
+		Account acc5 = new BusinessAccount(127, "Viviane", 3000.00, 0.00);
+		acc5.withdraw(1000.00);
+		System.out.println("New Balance simple account: " + acc5.getBalance());
 
 	}
 
